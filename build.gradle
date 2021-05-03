@@ -29,7 +29,11 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     //compile('org.projectlombok:lombok')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('com.h2database:h2')
+
+    //h2의 최신버전에서는 웹콘솔을 사용할 수 없다,,
+    //스프링부트와 AWS로 혼자 구현하는 웹서비스  책을 따라할 경우 1.4.198보다 낮은 버전을 추천한다.
+    //compile('com.h2database:h2')
+    runtimeOnly('com.h2database:h2:1.4.197')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
