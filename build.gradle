@@ -41,4 +41,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     compileOnly("org.projectlombok:lombok")
 
+    // mustache
+    compile('org.springframework.boot:spring-boot-starter-mustache')
+
 }
