@@ -23,7 +23,7 @@
             {{#posts}}                                  {{! posts라는 List를 순회 - 반복문 }}
                 <tr>
                     <td>{{id}}</td>                     {{! List내의 id라는 필드 }}
-                    <td>{{title}}</td>
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
                 </tr>
