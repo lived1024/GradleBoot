@@ -50,8 +50,6 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
                 .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
                 .orElse(attributes.toEntity());
 
-        // userRepository.save(user)에서 에러 발생중,,
-        //return userRepository.save(user);
-        return null;
+        return userRepository.save(user);
     }
 }
