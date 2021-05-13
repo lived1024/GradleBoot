@@ -27,7 +27,7 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
-    //compile('org.projectlombok:lombok')
+    compile('org.projectlombok:lombok')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
 
     //h2의 최신버전에서는 웹콘솔을 사용할 수 없다,,
@@ -38,8 +38,8 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
     // lombok
-    annotationProcessor("org.projectlombok:lombok")
-    compileOnly("org.projectlombok:lombok")
+//    annotationProcessor("org.projectlombok:lombok")
+//    compileOnly("org.projectlombok:lombok")
 
     // mustache
     compile('org.springframework.boot:spring-boot-starter-mustache')
