@@ -37,7 +37,7 @@ dependencies {
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
-    // lombok
+    // lombok 그래들 버전 수정으로 책에 나온대로 수정,,
 //    annotationProcessor("org.projectlombok:lombok")
 //    compileOnly("org.projectlombok:lombok")
 

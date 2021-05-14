@@ -30,6 +30,7 @@ public class OAuthAttributes {
         this.picture = picture;
     }
 
+    // OAuth2User에서 반환하는 사용자 정보는 Map -> 값 하나하나를 변환해야함
     public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes){
         return ofGoogle(userNameAttributeName, attributes);
     }
@@ -44,6 +45,9 @@ public class OAuthAttributes {
                 .build();
     }
 
+    /* User 엔티티 생성 - 처음 가입 시 OAuthAttributes에서 엔티티 생성
+     * 가입 시 GUEST 권한 부여
+     */
     public User toEntity(){
         return User.builder()
                 .name(name)

@@ -5,6 +5,20 @@
         <div class="row">
             <div class="dol-md-6">
                 <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+                <!-- 로그인 기능 영역 -->
+                {{! userName의 값이 있을때 출력  //  단, false나 0, 빈 문자열은 값이 없다고 간주  }}
+                {{#userName}}
+                    Logged in as: <span id="user">{{userName}}</span>
+                    <!-- 스프링 시큐리티에서 기본적으로 제공하는 로그아웃 URL
+                         SecurityConfig 클래스에서 URL변경할 수 있음 -->
+                    <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+                {{/userName}}
+                {{! userName의 값이 없거나 0, false, 빈문자열 }}
+                {{^userName}}
+                    <!-- 스프링 시큐리티에서 기본적으로 제공하는 로그인 URL -->
+                    <a href="/oauth2/authorization/google"
+                       class="btn btn-success active" role="button">Google Login</a>
+                {{/userName}}
             </div>
         </div>
         <br>
