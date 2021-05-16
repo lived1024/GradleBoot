@@ -1,6 +1,7 @@
 package org.example.yrShin.web;
 
 import lombok.RequiredArgsConstructor;
+import org.example.yrShin.config.auth.LoginUser;
 import org.example.yrShin.config.auth.dto.SessionUser;
 import org.example.yrShin.service.posts.PostsService;
 import org.example.yrShin.web.dto.PostsResponseDto;
@@ -26,10 +27,13 @@ public class IndexController {
 //        return "index";     // src/main/resources/templates/index.mustache      파일을 연결시켜준다
 //    }
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts", postsService.findAllDesc());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        //해당코드의 반복작업을 줄이기 위해 어노테이션으로 개선작업 진행 - 2021.05.16일 커밋
+        //어느 컨트롤러든지 @LoginUser를 사용하면 세션정보를 가져올수 있음
+        //SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
         if(user != null){
             model.addAttribute("userName", user.getName());
         }
