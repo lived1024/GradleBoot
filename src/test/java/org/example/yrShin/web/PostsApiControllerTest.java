@@ -105,7 +105,7 @@ public class PostsApiControllerTest {
                                                                    .content(expectedContent)
                                                                    .build();
 
-        String url = "http://localhost:" + port + "/api/vi/posts/" + updateId;
+        String url = "http://localhost:" + port + "/api/v1/posts/" + updateId;
 
         HttpEntity<PostsUpdateRequestDto> requestEntity = new HttpEntity<>(requestDto);
 
@@ -123,6 +123,5 @@ public class PostsApiControllerTest {
         List<Posts> all = postsRepository.findAll();
         Assertions.assertThat(all.get(0).getTitle()).isEqualTo(expectedTitle);
         Assertions.assertThat(all.get(0).getContent()).isEqualTo(expectedContent);
-
     }
 }
